@@ -1,0 +1,131 @@
+:root {
+  --screen_background: #000;
+  --background: #1a5b7c;
+  --font:  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  --navigation_font_colour: #fff;
+  --navigation_background_colour: #333;
+  --navigation_fond_colour_hover: #111;
+
+  --table_header_row_background: #333;
+  --table_border_colour: #dddddd;
+}
+
+.body {
+    width: 1500px;
+    margin: auto;
+    /* height: 100%; */
+    background-color: var(--screen_background);
+    color: white;
+    font-family: var(--font);
+}
+
+.translate {
+  margin: 12px 0 0 20px;
+}
+
+.my {
+  display: none;
+}
+
+.en {
+  display: block;
+}
+
+
+#logo {
+  max-width: 400px;
+  display: inline-block;
+  margin: 50px 80px 0 75px;
+}
+
+#coverImage {
+  max-width: 100%;
+}
+
+th {
+  background-color: var(--table_header_row_background);
+}
+
+.main {
+  background-color: var(--background);
+  height: 100%;
+}
+
+.mainText {
+  display: inline-block;
+  text-align: center;
+  padding: 100px 100px 0px 50px;
+  max-width: 50%;
+  float: right;
+}
+
+#languageButton1 {
+  color: var(--navigation_font_colour);
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+#languageButton2 {
+  color: var(--navigation_font_colour);
+  cursor: pointer;
+  display: none;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--navigation_background_colour);
+}
+
+li {
+  float: left;
+  height: auto;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: var(--navigation_font_colour);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, #languageButton1:hover, #languageButton2:hover {
+  background-color: var(--navigation_fond_colour_hover);
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+  margin: 100px auto 0 auto;
+}
+
+td, th {
+  border: 1px solid var(--table_border_colour);
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+
+
+
+
+
