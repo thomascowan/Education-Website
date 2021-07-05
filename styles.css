@@ -43,8 +43,14 @@
   max-width: 100%;
 }
 
+html,body { height:100%; }
+
 th {
   background-color: var(--table_header_row_background);
+}
+
+body {
+  height: 100%;
 }
 
 .main {
@@ -53,7 +59,7 @@ th {
 }
 
 .mainText {
-  display: inline-block;
+  display: block;
   text-align: center;
   padding: 100px 100px 0px 50px;
   max-width: 50%;
@@ -111,7 +117,7 @@ table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 80%;
-  margin: 100px auto 0 auto;
+  margin: 100px auto 50px auto;
 }
 
 td, th {

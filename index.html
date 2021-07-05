@@ -21,7 +21,8 @@
           <div class="mainText">
             <p>Don't forget that gifts often come with costs that go beyond their purchase price. When you purchase a child the latest smartphone, you're also committing to a monthly phone bill. When you purchase the latest gaming system, you're likely not going to be satisfied with the games that come with it for long and want to purchase new titles to play. When you buy gifts it's important to remember that some come with additional costs down the road that can be much more expensive than the initial gift itself.</p>
             <div class="updates">
-              <table>
+              <temp></temp>
+              <!-- <table>
                 <tr>
                   <th>Class Name</th>
                   <th>Description</th>
@@ -34,7 +35,7 @@
                   <td>25th July, 2021, 10:00 AM</td>
                   <td><a href="#">Click Here</a></td>
                 </tr>
-              </table>
+              </table> -->
           </div>
           </div>
         </div>
@@ -47,5 +48,23 @@
         }
         </script>
       <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+      <script src="d3.min.js?v=3.2.8"></script>
+      <script type="text/javascript"charset="utf-8">
+        d3.text("data.csv", function(data) {
+          var parsedCSV = d3.csv.parseRows(data);
+          console.log(parsedCSV)
+          var container = d3.select("temp")
+            .append("table")
+
+            .selectAll("tr")
+              .data(parsedCSV).enter()
+              .append("tr")
+
+            .selectAll("td")
+              .data(function(d) { return d; }).enter()
+              .append("td")
+              .text(function(d) { return d; });
+        });
+      </script>
   </footer>
 </html>
