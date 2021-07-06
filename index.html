@@ -6,8 +6,7 @@
     <link rel="shortcut icon" type="image/png" href="./images/favicon.png"/>
   </head>
   <body class="body">
-    <div class="root">
-      <div class="header">
+      <div class="navBar">
         <ul>
           <li style="float:right"><a href="/register">Register</a></li>
           <li style="float:right"><a href="/classes">Classes</a></li>
@@ -15,31 +14,34 @@
           <div class="translate" id="google_translate_element"></div>
         </ul>
       </div>
-        <div class="main">
-          <img id="coverImage" src="./images/cover.png">
+      <div class="main">
+        <img id="coverImage" src="./images/cover.png">
+        <div class="block2">
           <img id="logo" src="./images/logo.png">
           <div class="mainText">
-            <p>Don't forget that gifts often come with costs that go beyond their purchase price. When you purchase a child the latest smartphone, you're also committing to a monthly phone bill. When you purchase the latest gaming system, you're likely not going to be satisfied with the games that come with it for long and want to purchase new titles to play. When you buy gifts it's important to remember that some come with additional costs down the road that can be much more expensive than the initial gift itself.</p>
-            <div class="updates">
-              <temp></temp>
-              <!-- <table>
-                <tr>
-                  <th>Class Name</th>
-                  <th>Description</th>
-                  <th>Time</th>
-                  <th>Register</th>
-                </tr>
-                <tr>
-                  <td>Beginner's English</td>
-                  <td>Come learn beginners english and other things I am just typing to get a decent amount of word in this box.</td>
-                  <td>25th July, 2021, 10:00 AM</td>
-                  <td><a href="#">Click Here</a></td>
-                </tr>
-              </table> -->
+            <h1 class="title">Welcome to Online Education Myanmar!</h1>
+            <p class="intro">We are here to provide educational services to Myanmar people and all the minority ethnic groups residing in Myanmar. Our online classes are totally free of charge.</p>
           </div>
+            <div class="block3">
+              <div class="classBox">
+                <h2 class="tableTitle">Grades 1 - 7</h2>
+                <grades1-7 class="classTable"></grades1-7>
+              </div>
+              <div class="classBox">
+                <h2 class="tableTitle">Grades 8 - 10</h2>
+                <grades8-10 class="classTable"></grades8-10>
+              </div>
+              <div class="classBox">
+                <h2 class="tableTitle">University Students and Adults</h2>
+                <universityAndAdults class="classTable"></universityAndAdults>
+              </div>
+              <div class="classBox">
+                <h2 class="tableTitle">Additional Classes</h2>
+                <additionalClasses class="classTable"></additionalClasses>
+              </div>
+            </div>
           </div>
         </div>
-    </div>
   </body>
   <footer>
       <script type="text/javascript">
@@ -50,21 +52,52 @@
       <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
       <script src="d3.min.js?v=3.2.8"></script>
       <script type="text/javascript"charset="utf-8">
-        d3.text("data.csv", function(data) {
-          var parsedCSV = d3.csv.parseRows(data);
-          console.log(parsedCSV)
-          var container = d3.select("temp")
-            .append("table")
+        let arr = [];
+        createTable("classes/Grades 1-7.csv","grades1-7");
+        createTable("classes/Grades 8-10.csv","grades8-10");
+        createTable("classes/University and Adults.csv","universityAndAdults");
+        const myPromise = new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve(document.getElementsByTagName('td'));
+          }, 100);
+        }).then(
+          value => {
+            let temp = [];
+            for(let i = 0; i < value.length; i++){
+              if(value[i].innerHTML == "Register here") {
+                temp.push(value[i]);
+              }
+            }
+            for(let i = 0; i < temp.length; i++){
+              console.log(arr[i]);
+              temp[i].innerHTML = "<a href='" + arr[i] + "'>Register Here</a>";
+            }
+          }
+        )
 
-            .selectAll("tr")
-              .data(parsedCSV).enter()
-              .append("tr")
+        createTable("classes/Additional Classes.csv","additionalClasses");
+        function createTable(path, table){
+          d3.text(path, function(data) {
+            var parsedCSV = d3.csv.parseRows(data);
+            var container = d3.select(table)
+              .append("table")
 
-            .selectAll("td")
-              .data(function(d) { return d; }).enter()
-              .append("td")
-              .text(function(d) { return d; });
-        });
+              .selectAll("tr")
+                .data(parsedCSV).enter()
+                .append("tr")
+
+              .selectAll("td")
+                .data(function(d) { return d; }).enter()
+                .append("td")
+                .text(function(d) { 
+                  if(d.match(/^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/)){
+                    arr.push(d);
+                    return "Register here"
+                  }
+                  return d; 
+                });
+          });
+        }
       </script>
   </footer>
 </html>

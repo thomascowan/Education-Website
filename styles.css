@@ -2,6 +2,7 @@
   --screen_background: #000;
   --background: #1a5b7c;
   --font:  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font_colour: white;
 
   --navigation_font_colour: #fff;
   --navigation_background_colour: #333;
@@ -9,6 +10,25 @@
 
   --table_header_row_background: #333;
   --table_border_colour: #dddddd;
+  --table_even_row_colour: #004E7A;
+  --table_odd_row_colour: #012D3D;
+  --table_first_row_colour: #000;
+}
+
+
+html,body { 
+  height:100%; 
+  color: var(--font_colour);
+}
+
+a {
+  color: var(--font_colour);
+  /* text-decoration: none; */
+}
+
+.root {
+  background-color: var(--background);
+  margin-bottom: 50px;
 }
 
 .body {
@@ -18,6 +38,30 @@
     background-color: var(--screen_background);
     color: white;
     font-family: var(--font);
+}
+
+.block3 {
+  width: 100%;
+  text-align: center;
+}
+
+.classBox {
+  display: inline-block;
+  width: 48%;
+  /* padding-left: 100px; */
+}
+
+.tableTitle {
+  padding-top: 32px;
+}
+
+/* .classTable {
+  display:flex */
+/* } */
+
+.intro {
+  font-size: 20px;
+  padding-top: 75px;
 }
 
 .translate {
@@ -43,7 +87,9 @@
   max-width: 100%;
 }
 
-html,body { height:100%; }
+.title {
+  padding-top: 50px;
+}
 
 th {
   background-color: var(--table_header_row_background);
@@ -56,6 +102,11 @@ body {
 .main {
   background-color: var(--background);
   height: 100%;
+}
+
+.block2 {
+  background-color: var(--background);
+  padding-bottom: 50px;
 }
 
 .mainText {
@@ -117,7 +168,7 @@ table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 80%;
-  margin: 100px auto 50px auto;
+  margin: auto;
 }
 
 td, th {
@@ -127,7 +178,16 @@ td, th {
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: var(--table_even_row_colour);
+}
+
+tr:nth-child(odd) {
+  background-color: var(--table_odd_row_colour);
+}
+
+tr:first-child {
+  font-weight: bold;
+  background-color: var(--table_first_row_colour);
 }
 
 
