@@ -1,8 +1,14 @@
 :root {
-  --screen_background: #000;
-  --background: #1a5b7c;
+  --screen_background: rgb(0, 0, 0);
+  --background: #144057; /*fffefa*/
+  --background_blue: #1a5b7c;
   --font:  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  --font_colour: white;
+  --font_colour: #fff;
+  --registration-font-colour: #fff;
+  --registration-button-colour: #144761;
+  --registration-button-colour-hover: #012D3D;
+  --top_text_colour: #eed72f;
+  --top_text_font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
   --navigation_font_colour: #fff;
   --navigation_background_colour: #333;
@@ -10,9 +16,11 @@
 
   --table_header_row_background: #333;
   --table_border_colour: #dddddd;
-  --table_even_row_colour: #004E7A;
-  --table_odd_row_colour: #012D3D;
-  --table_first_row_colour: #000;
+  --table_first_row_colour: rgb(39, 39, 39);
+  --table_even_row_colour: #1a5b7c; 
+  --table_odd_row_colour: #012D3D; 
+  --table_rows_font_colour: #fff;
+  --table_header_font_colour: #fff;
 }
 
 
@@ -21,26 +29,49 @@ html,body {
   color: var(--font_colour);
 }
 
+.topImages {
+  height: 435px;
+}
+
+#logo {
+  max-width: 26%;
+  margin: auto;
+}
+
+.topText {
+  color: var(--top_text_colour);
+  text-align: right;
+  padding-right: 50px;
+  font-size: 28px;
+  font-family: var(--top_text_font);
+  font-weight: bold;
+  line-height: 45px;
+  letter-spacing: 3px;
+}
+
+#coverImage {
+  max-width: 74%;
+  float: right;
+}
+
 a {
   color: var(--font_colour);
-  /* text-decoration: none; */
 }
 
 .root {
-  background-color: var(--background);
+  background-color: var(--background_blue);
   margin-bottom: 50px;
 }
 
 .body {
-    width: 1500px;
+    width: 1120px;
     margin: auto;
-    /* height: 100%; */
     background-color: var(--screen_background);
-    color: white;
+    color: var(--font_colour);
     font-family: var(--font);
 }
 
-.block3 {
+.classes {
   width: 100%;
   text-align: center;
 }
@@ -48,20 +79,14 @@ a {
 .classBox {
   display: inline-block;
   width: 48%;
-  /* padding-left: 100px; */
 }
 
 .tableTitle {
-  padding-top: 32px;
+  padding-top: 15px;
 }
-
-/* .classTable {
-  display:flex */
-/* } */
 
 .intro {
   font-size: 20px;
-  padding-top: 75px;
 }
 
 .translate {
@@ -76,19 +101,29 @@ a {
   display: block;
 }
 
-
-#logo {
-  max-width: 400px;
-  display: inline-block;
-  margin: 50px 80px 0 75px;
-}
-
-#coverImage {
-  max-width: 100%;
-}
-
 .title {
   padding-top: 50px;
+  max-width: 76%;
+  margin: auto;
+}
+
+.reg {
+  margin: 32px 0;
+}
+
+.reg a{
+  font-size: 22px;
+  color: var(--registration-font-colour);
+  background-color: var(--registration-button-colour);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+
+.reg a:hover{ 
+  background-color: var(--registration-button-colour-hover);
 }
 
 th {
@@ -100,39 +135,20 @@ body {
 }
 
 .main {
-  background-color: var(--background);
+  background-color: var(--background_blue);
   height: 100%;
 }
 
 .block2 {
+  text-align: center;
   background-color: var(--background);
   padding-bottom: 50px;
 }
 
 .mainText {
-  display: block;
+  max-width: 80%;
+  margin: auto;
   text-align: center;
-  padding: 100px 100px 0px 50px;
-  max-width: 50%;
-  float: right;
-}
-
-#languageButton1 {
-  color: var(--navigation_font_colour);
-  cursor: pointer;
-  display: block;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-#languageButton2 {
-  color: var(--navigation_font_colour);
-  cursor: pointer;
-  display: none;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
 }
 
 ul {
@@ -167,7 +183,7 @@ li a:hover, #languageButton1:hover, #languageButton2:hover {
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 80%;
+  width: 85%;
   margin: auto;
 }
 
@@ -179,16 +195,19 @@ td, th {
 
 tr:nth-child(even) {
   background-color: var(--table_even_row_colour);
+  color: var(--table_rows_font_colour);
 }
 
 tr:nth-child(odd) {
   background-color: var(--table_odd_row_colour);
+  color: var(--table_rows_font_colour);
 }
 
-tr:first-child {
+/* tr:first-child {
   font-weight: bold;
   background-color: var(--table_first_row_colour);
-}
+  color: var(--table_header_font_colour);
+} */
 
 
 

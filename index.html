@@ -8,36 +8,33 @@
   <body class="body">
       <div class="navBar">
         <ul>
-          <li style="float:right"><a href="/register">Register</a></li>
-          <li style="float:right"><a href="/classes">Classes</a></li>
-          <li style="float:right"><a href="/">Home</a></li>
-          <div class="translate" id="google_translate_element"></div>
+          <li style="float:right"><a target="blank" href="#Registering_form">Register</a></li>
+          <li style="float:right"><a target="blank" href="#volunteering_form">Volunteer</a>
+          <li style="float:right"><a target="blank" href="https://www.facebook.com/groups/1148211305683828"><i class="fab fa-facebook-square"></i>Facebook</a></li>
+          </li><div class="translate" id="google_translate_element"></div>
         </ul>
       </div>
       <div class="main">
-        <img id="coverImage" src="./images/cover.png">
-        <div class="block2">
+        <div class="topImages">
           <img id="logo" src="./images/logo.png">
+          <img id="coverImage" src="./images/cover.png">
+          <p class="topText">ONLINE EDUCATION MYANMAR<br>Fair Learning For All</p>
+        </div>
+        <div class="block2">
           <div class="mainText">
-            <h1 class="title">Welcome to Online Education Myanmar!</h1>
+            <h1 class="title">Welcome to<br>Online Education Myanmar!</h1>
             <p class="intro">We are here to provide educational services to Myanmar people and all the minority ethnic groups residing in Myanmar. Our online classes are totally free of charge.</p>
+            <p class="reg"><a href="https://www.google.com">Register Here</a></p>
+            <h1 class="avail">Available Classes</h1>
           </div>
-            <div class="block3">
+            <div class="block3" id="classes">
               <div class="classBox">
-                <h2 class="tableTitle">Grades 1 - 7</h2>
-                <grades1-7 class="classTable"></grades1-7>
-              </div>
-              <div class="classBox">
-                <h2 class="tableTitle">Grades 8 - 10</h2>
-                <grades8-10 class="classTable"></grades8-10>
+                <h2 class="tableTitle">Grades 1 - 10</h2>
+                <grades1-10 class="classTable"></grades1-10>
               </div>
               <div class="classBox">
                 <h2 class="tableTitle">University Students and Adults</h2>
                 <universityAndAdults class="classTable"></universityAndAdults>
-              </div>
-              <div class="classBox">
-                <h2 class="tableTitle">Additional Classes</h2>
-                <additionalClasses class="classTable"></additionalClasses>
               </div>
             </div>
           </div>
@@ -52,30 +49,10 @@
       <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
       <script src="d3.min.js?v=3.2.8"></script>
       <script type="text/javascript"charset="utf-8">
-        let arr = [];
-        createTable("classes/Grades 1-7.csv","grades1-7");
-        createTable("classes/Grades 8-10.csv","grades8-10");
+      
+        createTable("classes/Grades 1-10.csv","grades1-10");
         createTable("classes/University and Adults.csv","universityAndAdults");
-        const myPromise = new Promise((resolve, reject) => {
-          setTimeout(() => {
-            resolve(document.getElementsByTagName('td'));
-          }, 100);
-        }).then(
-          value => {
-            let temp = [];
-            for(let i = 0; i < value.length; i++){
-              if(value[i].innerHTML == "Register here") {
-                temp.push(value[i]);
-              }
-            }
-            for(let i = 0; i < temp.length; i++){
-              console.log(arr[i]);
-              temp[i].innerHTML = "<a href='" + arr[i] + "'>Register Here</a>";
-            }
-          }
-        )
 
-        createTable("classes/Additional Classes.csv","additionalClasses");
         function createTable(path, table){
           d3.text(path, function(data) {
             var parsedCSV = d3.csv.parseRows(data);
@@ -97,6 +74,25 @@
                   return d; 
                 });
           });
+
+          const myPromise = new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve(document.getElementsByTagName('td'));
+          }, 100);
+          }).then(
+            value => {
+              let temp = [];
+              for(let i = 0; i < value.length; i++){
+                if(value[i].innerHTML == "Register here") {
+                  temp.push(value[i]);
+                }
+              }
+              for(let i = 0; i < temp.length; i++){
+                console.log(arr[i]);
+                temp[i].innerHTML = "<a href='" + arr[i] + "'>Register Here</a>";
+              }
+            }
+          )
         }
       </script>
   </footer>
