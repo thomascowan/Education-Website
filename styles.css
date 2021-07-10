@@ -5,8 +5,8 @@
   --font:  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   --font_colour: #fff;
   --registration-font-colour: #fff;
-  --registration-button-colour: #144761;
-  --registration-button-colour-hover: #012D3D;
+  --registration-button-colour: #06202e;
+  --registration-button-colour-hover: #000;
   --top_text_colour: #eed72f;
   --top_text_font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
@@ -59,8 +59,8 @@ a {
 }
 
 .root {
-  background-color: var(--background_blue);
-  margin-bottom: 50px;
+  /* background: rgb(26,91,124); */
+  /* background: linear-gradient(180deg, rgba(20,64,87,1) 71%, rgba(26,91,124,1) 74%, rgba(20,64,87,1) 100%);  margin-bottom: 50px; */
 }
 
 .body {
@@ -77,8 +77,8 @@ a {
 }
 
 .classBox {
-  display: inline-block;
-  width: 48%;
+  /* display: inline-block; */
+  width: 80%;
 }
 
 .tableTitle {
@@ -87,6 +87,8 @@ a {
 
 .intro {
   font-size: 20px;
+  width: 80%;
+  padding: 20px 0;
 }
 
 .translate {
@@ -103,12 +105,12 @@ a {
 
 .title {
   padding-top: 50px;
-  max-width: 76%;
-  margin: auto;
+  max-width: 80%;
 }
 
 .reg {
-  margin: 32px 0;
+  text-align: center;
+  margin: 50px 90px 50px 0;
 }
 
 .reg a{
@@ -134,21 +136,33 @@ body {
   height: 100%;
 }
 
-.main {
-  background-color: var(--background_blue);
-  height: 100%;
+.main {background: rgb(26,91,124);
+  background: linear-gradient(180deg, rgba(26,91,124,1) 30%, rgba(20,64,87,1) 45%, rgba(20,64,87,1) 100%);
+height: 100%;
 }
 
 .block2 {
-  text-align: center;
-  background-color: var(--background);
+  /* text-align: center; */
+  /* background-color: var(--background); */
   padding-bottom: 50px;
 }
 
 .mainText {
-  max-width: 80%;
-  margin: auto;
-  text-align: center;
+  width: 47%;
+  padding-left: 50px;
+  display: inline-block;
+  /* margin: auto; */
+  /* text-align: center; */
+}
+
+.avail {
+  padding-top: 50px;
+}
+
+.block3 {
+  width: 48%;
+  float: right;
+  display: block;
 }
 
 ul {
