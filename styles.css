@@ -77,8 +77,8 @@ a {
 }
 
 .classBox {
-  /* display: inline-block; */
-  width: 80%;
+  display: inline-block;
+  width: 48%;
 }
 
 .tableTitle {
@@ -89,6 +89,8 @@ a {
   font-size: 20px;
   width: 80%;
   padding: 20px 0;
+  margin: auto;
+  text-align: center;
 }
 
 .translate {
@@ -106,11 +108,14 @@ a {
 .title {
   padding-top: 50px;
   max-width: 80%;
+  text-align: center;
+  margin: auto;
 }
 
 .reg {
   text-align: center;
-  margin: 50px 90px 50px 0;
+  margin: 50px auto;
+  /* margin: 50px 90px 50px 0; */
 }
 
 .reg a{
@@ -143,25 +148,28 @@ height: 100%;
 
 .block2 {
   /* text-align: center; */
-  /* background-color: var(--background); */
+  background-color: var(--background);
   padding-bottom: 50px;
 }
 
 .mainText {
-  width: 47%;
-  padding-left: 50px;
+  width: 100%;
+  /* padding-left: 50px; */
   display: inline-block;
-  /* margin: auto; */
-  /* text-align: center; */
+  margin: auto;
+  text-align: center;
 }
 
 .avail {
-  padding-top: 50px;
+  text-align: center;
+  padding-top: 25px;
+  margin: auto;
 }
 
 .block3 {
-  width: 48%;
-  float: right;
+  width: 85%;
+  margin: auto;
+  /* float: right; */
   display: block;
 }
 
