@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="my" class="html">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="../styles.css" rel="stylesheet" type="text/css">
+    <title>Online Education Myanmar</title>
+    <link rel="shortcut icon" type="image/png" href="./images/favicon.png"/>
+  </head>
+  <body class="body">
+      <div class="navBar">
+        <ul>
+          <li style="float:right"><a target="blank" href="https://docs.google.com/forms/d/e/1FAIpQLScVgewnaFGCZKIzUUNqzxktJTMrJFXxzbeBDKNMH_tD-sysgw/viewform">မှတ်ပုံတင်ပါ</a></li>
+          <li style="float:right"><a target="blank" href="https://www.facebook.com/OEM21">Facebook</a></li>
+          <li style="float:right"><a href="./material.html">Material</a></li>
+          <li style="float:right"><a href="./seminars.html">Seminars</a></li>
+          <li style="float:right"><a href="../index.html">Home</a></li>
+          </li><div class="translate" id="google_translate_element"></div>
+        </ul>
+      </div>
+      <div class="main">
+        <div class="topImages">
+          <img id="logo" src="../images/logo.png">
+          <img id="coverImage" src="../images/cover.png">
+          <p class="topText">ONLINE EDUCATION MYANMAR<br>Fair Learning For All</p>
+        </div>
+        <div class="block2">
+            <h1 class="materialTitle">Class Material</h1>
+            <ul id="list">
+            </ul>
+        </div>
+      </div>
+  </body>
+  <footer>
+      <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+        </script>
+      <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+      <script>
+        loadVideos();
+
+        function loadVideos() {
+          let d = document.getElementById("list");
+          let object;
+          let httpRequest = new XMLHttpRequest(); 
+          httpRequest.open("GET", "../data/materials.json", true);
+          httpRequest.send();
+          httpRequest.addEventListener("readystatechange", function() {
+              if (this.readyState === this.DONE) {
+                  object = JSON.parse(this.response);
+                  let text = d.innerHTML;
+                  for(let i = 0; i < object.length; i++){
+                      text += "<li><a target='blank' href='" + object[i].link + "'>" + object[i].title + "</a></li>\n"
+                  }
+                  console.log(text)
+                  d.innerHTML = text;
+              }
+          });
+        }
+      </script>
+  </footer>
+</html>

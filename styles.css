@@ -31,6 +31,7 @@ html,body {
 
 .topImages {
   height: 435px;
+  background-color: var(--background_blue);
 }
 
 #logo {
@@ -56,11 +57,6 @@ html,body {
 
 a {
   color: var(--font_colour);
-}
-
-.root {
-  /* background: rgb(26,91,124); */
-  /* background: linear-gradient(180deg, rgba(20,64,87,1) 71%, rgba(26,91,124,1) 74%, rgba(20,64,87,1) 100%);  margin-bottom: 50px; */
 }
 
 .body {
@@ -90,11 +86,11 @@ a {
   width: 80%;
   padding: 20px 0;
   margin: auto;
-  text-align: center;
+  text-align: left;
 }
 
 .translate {
-  margin: 12px 0 0 20px;
+  margin: 15px 0 0 20px;
 }
 
 .my {
@@ -141,8 +137,8 @@ body {
   height: 100%;
 }
 
-.main {background: rgb(26,91,124);
-  background: linear-gradient(180deg, rgba(26,91,124,1) 30%, rgba(20,64,87,1) 45%, rgba(20,64,87,1) 100%);
+.main {
+  background: var(--background);
 height: 100%;
 }
 
@@ -173,7 +169,7 @@ height: 100%;
   display: block;
 }
 
-ul {
+.navBar ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -181,16 +177,12 @@ ul {
   background-color: var(--navigation_background_colour);
 }
 
-li {
+.navBar li {
   float: left;
-  height: auto;
+  height: 50px;
 }
 
-li:last-child {
-  border-right: none;
-}
-
-li a {
+.navBar li a {
   display: block;
   color: var(--navigation_font_colour);
   text-align: center;
@@ -198,7 +190,7 @@ li a {
   text-decoration: none;
 }
 
-li a:hover, #languageButton1:hover, #languageButton2:hover {
+.navBar li a:hover{
   background-color: var(--navigation_fond_colour_hover);
 }
 
@@ -225,14 +217,56 @@ tr:nth-child(odd) {
   color: var(--table_rows_font_colour);
 }
 
-/* tr:first-child {
-  font-weight: bold;
-  background-color: var(--table_first_row_colour);
-  color: var(--table_header_font_colour);
-} */
+.VideoBlock h1{ 
+  padding: 30px 0 0 130px;
+}
 
+.VideoBlock {
+  width: 100%;
+  margin: auto;
+}
 
+.video {
+  margin: 30px auto;
+  height: 350;
+  width:77%;
+}
 
+.videos {
+  display: inline-block;
+}
 
+.videoText {
+  float: right;
+  width: 40%;
+}
 
+.block2 ul {
+  list-style-type: none;
+  width: 80%;
+  margin: 100px auto;
+  padding: 0;
+  font-size: large;
+  overflow: hidden;
+  background-color: var(--background);
+}
 
+.block2 li {
+  float: none;
+  margin: 0;
+  height: 50px;
+  text-align: left;
+}
+
+.block2 a {
+  color: white;
+  text-decoration: underline;
+}
+
+.block2 li a:hover{
+  background-color: var(--background);
+}
+
+.materialTitle {
+  margin: 75px 0 0 125px;
+}

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" class="html">
+<html lang="my" class="html">
   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link href="./styles.css" rel="stylesheet" type="text/css">
     <title>Online Education Myanmar</title>
     <link rel="shortcut icon" type="image/png" href="./images/favicon.png"/>
@@ -8,9 +9,11 @@
   <body class="body">
       <div class="navBar">
         <ul>
-          <li style="float:right"><a target="blank" href="#Registering_form">Register</a></li>
-          <li style="float:right"><a target="blank" href="#volunteering_form">Volunteer</a>
-          <li style="float:right"><a target="blank" href="https://www.facebook.com/groups/1148211305683828"><i class="fab fa-facebook-square"></i>Facebook</a></li>
+          <li style="float:right"><a target="blank" href="https://docs.google.com/forms/d/e/1FAIpQLScVgewnaFGCZKIzUUNqzxktJTMrJFXxzbeBDKNMH_tD-sysgw/viewform">မှတ်ပုံတင်ပါ</a></li>
+          <li style="float:right"><a target="blank" href="https://www.facebook.com/OEM21">Facebook</a></li>
+          <li style="float:right"><a href="pages/seminars.html">Seminars</a></li>
+          <li style="float:right"><a href="pages/material.html">Material</a></li>
+          <li style="float:right"><a href="index.html">Home</a></li>
           </li><div class="translate" id="google_translate_element"></div>
         </ul>
       </div>
@@ -22,18 +25,20 @@
         </div>
         <div class="block2">
           <div class="mainText">
-            <h1 class="title">Welcome to<br>Online Education Myanmar!</h1>
-            <p class="intro">We are here to provide educational services to Myanmar people and all the minority ethnic groups residing in Myanmar. Our online classes are totally free of charge.</p>
-            <p class="reg"><a href="https://www.google.com">Register for Classes</a></p>
+            <h1 class="title">Online Education Myanmar<br>မှကြိုဆိုပါသည်</h1>
+            <p class="intro">Online Education Myanmar College ၏ ရည်မှန်းချက်မှာ မြန်မာပြည်သူများအား အခမဲ့ အွန်လိုင်းပညာရေးဖြင့် ထောက်ပံ့ အကူအညီပေးရန် ဖြစ်သည်။ <br><br>
+              ကျွန်ုပ်တို့သည် ကျောင်းသားများ စိတ်အေးချမ်းသာစွာ ပညာ သင်ကြားနိုင်သော community တစ်ခုကိုဖန်တီးပေးနိုင်ရန် ကြိုးပမ်းနေပါသည်။ <br><br>
+              OEM ၏ အခြေခံအုတ်မြစ်မှာ ကျွန်ုပ်တို့၏ ကျောင်းသူ ကျောင်းသားများနှင့် ပညာ သင်ကြားပေးသော စေတနာ့ဝန်ထမ်း ဆရာ ဆရာမ များ ပင်ဖြစ်သည်။</p>
+            <p class="reg"><a href="https://docs.google.com/forms/d/e/1FAIpQLScVgewnaFGCZKIzUUNqzxktJTMrJFXxzbeBDKNMH_tD-sysgw/viewform">မှတ်ပုံတင်ပါ</a></p>
           </div>
           <div class="block3" id="classes">
-            <h1 class="avail">Available Classes</h1>
+            <h1 class="avail">ပို့ချသော သင်တန်းများ</h1>
             <div class="classBox">
-              <h2 class="tableTitle">Grades 1 - 10</h2>
+              <h2 class="tableTitle">၁ တန်း မှ ၁၀ တန်း</h2>
               <grades1-10 class="classTable"></grades1-10>
             </div>
             <div class="classBox">
-              <h2 class="tableTitle">University Students and Adults</h2>
+              <h2 class="tableTitle">တက္ကသိုလ်ကျောင်းသားများနှင့်လူကြီးများ</h2>
               <universityAndAdults class="classTable"></universityAndAdults>
             </div>
           </div>
@@ -50,8 +55,8 @@
       <script src="d3.min.js?v=3.2.8"></script>
       <script type="text/javascript"charset="utf-8">
       
-        createTable("classes/Grades 1-10.csv","grades1-10");
-        createTable("classes/University and Adults.csv","universityAndAdults");
+        createTable("data/Grades 1-10.csv","grades1-10");
+        createTable("data/University and Adults.csv","universityAndAdults");
 
         function createTable(path, table){
           d3.text(path, function(data) {
@@ -67,32 +72,9 @@
                 .data(function(d) { return d; }).enter()
                 .append("td")
                 .text(function(d) { 
-                  if(d.match(/^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/)){
-                    arr.push(d);
-                    return "Register here"
-                  }
                   return d; 
                 });
           });
-
-          const myPromise = new Promise((resolve, reject) => {
-          setTimeout(() => {
-            resolve(document.getElementsByTagName('td'));
-          }, 100);
-          }).then(
-            value => {
-              let temp = [];
-              for(let i = 0; i < value.length; i++){
-                if(value[i].innerHTML == "Register here") {
-                  temp.push(value[i]);
-                }
-              }
-              for(let i = 0; i < temp.length; i++){
-                console.log(arr[i]);
-                temp[i].innerHTML = "<a href='" + arr[i] + "'>Register Here</a>";
-              }
-            }
-          )
         }
       </script>
   </footer>
