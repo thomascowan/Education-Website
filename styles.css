@@ -77,8 +77,17 @@ a {
   width: 48%;
 }
 
+.yellowLine {
+  background-color: #eed72f;
+  height: 5px;
+  width: 50%;
+  margin: 45px auto 70px auto;
+}
+
 .tableTitle {
   padding-top: 15px;
+  margin: 0 0 0 35px;
+  font-size: 20px;
 }
 
 .intro {
