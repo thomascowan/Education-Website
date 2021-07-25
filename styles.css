@@ -77,6 +77,10 @@ a {
   width: 48%;
 }
 
+#logo1 {
+  display: none;
+}
+
 .yellowLine {
   background-color: #eed72f;
   height: 5px;
@@ -278,4 +282,101 @@ tr:nth-child(odd) {
 
 .materialTitle {
   margin: 75px 0 0 125px;
+}
+
+@media screen and (max-width: 1000px) {
+  
+  #logo{
+    display: none;
+  }
+
+  #logo1{
+    display: block;
+    margin: auto;
+    width: 70%;
+  }
+
+  #coverImage {
+    display: block;
+    max-width: 100%;
+    /* width: 100%; */
+  }
+
+  .topImages {
+    height: auto;
+  }
+
+  .topText {
+    text-align: center;
+    padding-right: 0;
+    padding-bottom: 50px;
+    background-color: #1a5b7c;
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  .title {
+    font-size: 40px;
+  }
+
+  .intro {
+    font-size: 29px;
+  }
+
+  .block2 a {
+    font-size: 45px;
+  }
+
+  .avail {
+    font-size: 45px;
+  }
+
+  .classBox {
+    width: 85%;
+    margin: auto;
+    display: block;
+  }
+
+  .tableTitle {
+    font-size: 34px;
+    margin: 32px 0 0 0;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  td {
+    font-size: 32px;
+  }
+
+  .navBar li a {
+    font-size: 30px;
+  }
+
+  .navBar li {
+    height: 75px;
+  }
+
+  .VideoBlock h1 {
+    font-size: 50px;
+  }
+
+  .video {
+    width: auto;
+    margin: auto;
+  }
+
+  .videos {
+    width: 75%;
+    height: 400px;
+    margin: auto;
+    display: block;
+  }
+
+  .videoText {
+    width: 75%;
+    float: none;
+    margin: auto;
+  }
 }
