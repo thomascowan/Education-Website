@@ -1,0 +1,44 @@
+UPDATING CLASSES.
+
+1       Go into file 'Grades 1-8.csv', 'Grades 9-12.csv', or 'University and Adults.csv' (depending on which list you want to update).
+2.1     To remove a class, delete that line.
+2.2     To add a class, create a newline under where you want it in the list and type it in.
+3       Save the file.
+4       Upload to AWS.
+
+UPDATING READING MATERIALS AND SHARED CONTENT
+
+1       Go into file 'materials.json'.
+2       Copy paste selection below and paste at end of last box (Or copy from the file and replace content).
+    ,{
+        "link": "",
+        "title": ""
+    }
+3       Paste link to resource into "" on the first line next to 'link'.
+4       Enter what you want the link text to be on second line next to 'title'.
+5       Save the file.
+6       Upload to AWS.
+
+UPDATING VIDEOS
+
+1       Go to the file 'videos.json'.
+2       Copy paste selection below and paste at end of last box (Or copy from the file and replace content).
+    ,{
+        "url": "",
+        "title": "",
+        "description": ""
+    }
+3       Copy the URL of the Youtube Video and paste in 'url' section.
+3.1     WARNING: URL must be in format of 'https://www.youtube.com/watch?v=XXXXXXXXXXX' Otherwise this will not work.
+4       Add a title and description to the object to be displayed on the page. Leaving blank will not display anything.
+5       Save the file.
+6       Upload to AWS.
+
+UPLOADING TO AWS
+
+1       Go to https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fconsole%2Fhome%3Ffromtb%3Dtrue%26hashArgs%3D%2523%26isauthcode%3Dtrue%26nc2%3Dh_ct%26src%3Dheader-signin%26state%3DhashArgsFromTB_us-east-1_9854465739a46e7c&client_id=arn%3Aaws%3Asignin%3A%3A%3Aconsole%2Fcanvas&forceMobileApp=0&code_challenge=kJxhm-MNyePfu4WXBraCv__7Vs7yRcZN37Wdxjuo9Rs&code_challenge_method=SHA-256
+2       Sign in using Office@oem.eduburma.org and password.
+3       Go to S3 Buckets and open the www.OEMCollege Bucket where it has public access. https://s3.console.aws.amazon.com/s3/home?region=us-east-2#
+4       Click the Orange 'Upload' button.
+5       Drag any updated content file onto the page and click 'Upload' at the bottom of the page.
+6       Wait for upload to complete.

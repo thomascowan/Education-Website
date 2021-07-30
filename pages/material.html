@@ -9,19 +9,17 @@
   <body class="body">
       <div class="navBar">
         <ul>
-          <li style="float:right"><a target="blank" href="https://docs.google.com/forms/d/e/1FAIpQLScVgewnaFGCZKIzUUNqzxktJTMrJFXxzbeBDKNMH_tD-sysgw/viewform">စာရင်းသွင်းပါ</a></li>
+          <li style="float:right"><a href="./registration.html">စာရင်းသွင်းပါ</a></li>          
           <li style="float:right"><a target="blank" href="https://www.facebook.com/OEM21">Facebook</a></li>
-          <li style="float:right"><a href="./material.html">အတန်းများ</a></li>
-          <li style="float:right"><a href="./seminars.html">နှီးနှောဖလှယ်ပွဲများ</a></li>
+          <li style="float:right"><a href="./material.html">Classes</a></li>
+          <li style="float:right"><a href="./seminars.html">Seminars</a></li>
           <li style="float:right"><a href="../index.html">Home</a></li>
-          <!-- </li><div class="translate" id="google_translate_element"></div> -->
         </ul>
       </div>
       <div class="main">
         <div class="topImages">
-          <img id="logo" src="./images/logo.png">
-          <img id="coverImage" src="./images/cover.png">
-          <img id="logo1" src="./images/logo.png">
+          <img id="logo" src="../images/logo.png">
+          <img id="coverImage" src="../images/cover.png">
           <p class="topText">ONLINE EDUCATION MYANMAR<br>Fair Learning For All</p>
         </div>
         <div class="block2">
@@ -32,12 +30,6 @@
       </div>
   </body>
   <footer>
-      <!-- <script type="text/javascript">
-        function googleTranslateElementInit() {
-          new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-        }
-        </script>
-      <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
       <script>
         loadVideos();
 
@@ -54,7 +46,6 @@
                   for(let i = 0; i < object.length; i++){
                       text += "<li><a target='blank' href='" + object[i].link + "'>" + object[i].title + "</a></li>\n"
                   }
-                  console.log(text)
                   d.innerHTML = text;
               }
           });

@@ -12,7 +12,7 @@
           <li style="float:right"><a href="./registration.html">စာရင်းသွင်းပါ</a></li>
           <li style="float:right"><a target="blank" href="https://www.facebook.com/OEM21">Facebook</a></li>
           <!-- <li style="float:right"><a href="./material.html">Classes</a></li> -->
-          <li style="float:right"><a href="seminars.html">Seminars</a></li>
+          <li style="float:right"><a href="./seminars.html">Seminars</a></li>
           <li style="float:right"><a href="../index.html">Home</a></li>
         </ul>
       </div>
@@ -23,9 +23,13 @@
           <p class="topText">ONLINE EDUCATION MYANMAR<br>Fair Learning For All</p>
         </div>
         <div class="block2">
-          <div class="VideoBlock" id="videoBlock">
-              <h1>Seminar Videos</h1>
-        </div>
+            <h1 class="materialTitle">Registration Links</h1>
+            <table id="regTable">
+              <tr>
+                <th>Grade</th>
+                <th>Link</th>
+              </tr>
+            </table>
         </div>
       </div>
   </body>
@@ -34,27 +38,20 @@
         loadVideos();
 
         function loadVideos() {
-          let d = document.getElementById("videoBlock");
-          
+          let d = document.getElementById("regTable");
           let object;
           let httpRequest = new XMLHttpRequest(); 
-          httpRequest.open("GET", "../data/videos.json", true);
+          httpRequest.open("GET", "../data/registration.json", true);
           httpRequest.send();
           httpRequest.addEventListener("readystatechange", function() {
               if (this.readyState === this.DONE) {
                   object = JSON.parse(this.response);
                   let text = d.innerHTML;
                   for(let i = 0; i < object.length; i++){
-                    if(object[i].url.includes("watch")){
-                      object[i].url = "https://www.youtube.com/embed/" + object[i].url.substring(32);
-                      console.log("https://www.youtube.com/embed/" + object[i].url.substring(32))
-                    }
-                    text += "<div class='video'>\n"
-                    text += "<iframe class='videos' width='420' height='315' src='" + object[i].url + "'></iframe>\n"
-                    text += "<div class='videoText'>\n"
-                    text += "<h2 class='videoTitle'>" + object[i].title + "</h2>\n"
-                    text += "<p class='videoPara'>" + object[i].description + "</p>\n"
-                    text += "</div>\n</div>\n"
+                      text += "<tr>\n"
+                      text += "<td>" + object[i].title + "</td>\n"
+                      text += "<td><a target='blank' href='" + object[i].link + "'>Click Here</a></td>\n"
+                      text += "</tr>\n"
                   }
                   d.innerHTML = text;
               }

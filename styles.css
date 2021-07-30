@@ -15,7 +15,7 @@
   --navigation_fond_colour_hover: #111;
 
   --table_header_row_background: #333;
-  --table_border_colour: #dddddd;
+  --table_border_colour: #000;
   --table_first_row_colour: rgb(39, 39, 39);
   --table_even_row_colour: #1a5b7c; 
   --table_odd_row_colour: #012D3D; 
@@ -75,10 +75,6 @@ a {
 .classBox {
   display: inline-block;
   width: 48%;
-}
-
-#logo1 {
-  display: none;
 }
 
 .yellowLine {
@@ -281,25 +277,27 @@ tr:nth-child(odd) {
 }
 
 .materialTitle {
-  margin: 75px 0 0 125px;
+  margin: 75px 0 0 110px;
+}
+
+#regTable {
+  margin: 32px auto;
+  width: 80%;
 }
 
 @media screen and (max-width: 1000px) {
   
   #logo{
-    display: none;
-  }
-
-  #logo1{
     display: block;
     margin: auto;
     width: 70%;
+    max-width: 100%;
   }
 
   #coverImage {
     display: block;
     max-width: 100%;
-    /* width: 100%; */
+    margin-bottom: 50px;
   }
 
   .topImages {
@@ -346,7 +344,7 @@ tr:nth-child(odd) {
     width: 100%;
   }
 
-  td {
+  td, th, .block2 td a{
     font-size: 32px;
   }
 
@@ -378,5 +376,14 @@ tr:nth-child(odd) {
     width: 75%;
     float: none;
     margin: auto;
+  }
+
+  .videoTitle {
+    font-size: 45px;
+  } 
+  
+  .videoPara {
+    font-size: 32px;
+    margin-bottom: 110px;
   }
 }

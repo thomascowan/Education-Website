@@ -3,18 +3,16 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link href="./styles.css" rel="stylesheet" type="text/css">
-    <!-- <link href=“https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css” rel=“stylesheet”/> -->
-
     <title>Online Education Myanmar</title>
     <link rel="shortcut icon" type="image/png" href="./images/favicon.png"/>
   </head>
   <body class="body">
       <div class="navBar">
         <ul>
-          <li style="float:right"><a target="blank" href="https://docs.google.com/forms/d/e/1FAIpQLScVgewnaFGCZKIzUUNqzxktJTMrJFXxzbeBDKNMH_tD-sysgw/viewform">စာရင်းသွင်းပါ</a></li>
+          <li style="float:right"><a href="./pages/registration.html">စာရင်းသွင်းပါ</a></li>
           <li style="float:right"><a target="blank" href="https://www.facebook.com/OEM21">Facebook</a></li>
-          <!-- <li style="float:right"><a href="pages/material.html">အတန်းများ</a></li> -->
-          <li style="float:right"><a href="pages/seminars.html">နှီးနှောဖလှယ်ပွဲများ</a></li>
+          <!-- <li style="float:right"><a href="pages/material.html">Classes</a></li> -->
+          <li style="float:right"><a href="pages/seminars.html">Seminars</a></li>
           <li style="float:right"><a href="index.html">Home</a></li>
         </ul>
       </div>
@@ -22,7 +20,6 @@
         <div class="topImages">
           <img id="logo" src="./images/logo.png">
           <img id="coverImage" src="./images/cover.png">
-          <img id="logo1" src="./images/logo.png">
           <p class="topText">ONLINE EDUCATION MYANMAR<br>Fair Learning For All</p>
         </div>
         <div class="block2">
@@ -32,13 +29,17 @@
               ကျွန်ုပ်တို့သည် ကျောင်းသားများ စိတ်အေးချမ်းသာစွာ ပညာ သင်ကြားနိုင်သော community တစ်ခုကိုဖန်တီးပေးနိုင်ရန် ကြိုးပမ်းနေပါသည်။ <br><br>
               OEM ၏ အခြေခံအုတ်မြစ်မှာ ကျွန်ုပ်တို့၏ ကျောင်းသူ ကျောင်းသားများနှင့် ပညာ သင်ကြားပေးသော စေတနာ့ဝန်ထမ်း ဆရာ ဆရာမ များ ပင်ဖြစ်သည်။</p>
             <div class="yellowLine"></div>
-            <p class="reg"><a href="https://docs.google.com/forms/d/e/1FAIpQLScVgewnaFGCZKIzUUNqzxktJTMrJFXxzbeBDKNMH_tD-sysgw/viewform">စာရင်းသွင်းပါ</a></p>
+            <p class="reg"><a href="./pages/registration.html">စာရင်းသွင်းပါ</a></p>
           </div>
           <div class="block3" id="classes">
             <h1 class="avail">ပို့ချသော သင်တန်းများ</h1>
             <div class="classBox">
-              <h2 class="tableTitle">တစ် တန်း မှ ရှစ် တန်း</h2>
-              <grades1-10 class="classTable"></grades1-10>
+              <h2 class="tableTitle">တစ်(၁) တန်း မှ ရှစ်(၈) တန်း</h2>
+              <grades1-8 class="classTable"></grades1-8>
+            </div>
+            <div class="classBox">
+              <h2 class="tableTitle">ကိုး(၉) တန်း မှ ဆယ့်နှစ်(၁၂) တန်း</h2>
+              <grades9-12 class="classTable"></grades9-11>
             </div>
             <div class="classBox">
               <h2 class="tableTitle">တက္ကသိုလ်</h2>
@@ -49,16 +50,11 @@
       </div>
   </body>
   <footer>
-      <!-- <script type="text/javascript">
-        function googleTranslateElementInit() {
-          new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-        }
-        </script>
-      <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
       <script src="d3.min.js?v=3.2.8"></script>
       <script type="text/javascript"charset="utf-8">
       
-        createTable("data/Grades 1-10.csv","grades1-10");
+        createTable("data/Grades 1-8.csv","grades1-8");
+        createTable("data/Grades 9-12.csv","grades9-12");
         createTable("data/University and Adults.csv","universityAndAdults");
 
         function createTable(path, table){
