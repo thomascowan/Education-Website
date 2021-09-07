@@ -98,6 +98,41 @@ a {
   text-align: left;
 }
 
+.aboutus {
+  font-size: 20px;
+  width: 80%;
+  padding: 20px 0;
+  margin: auto;
+  text-align: left;
+  margin-bottom: 200px;
+}
+
+.founders{
+  text-align: center;
+  margin: auto;
+}
+
+.founder{
+  margin: auto 50px;
+  max-width: 25%;
+  display: inline-block;
+  padding: 50px 0;
+  text-align: left;
+}
+
+.founders img{
+  /* height: 500px; */
+  width: 100%;
+}
+
+.founder h1 {
+  font-size: 28px;
+}
+
+.founder h2 {
+  font-weight: 150;
+}
+
 .translate {
   margin: 15px 0 0 20px;
 }
